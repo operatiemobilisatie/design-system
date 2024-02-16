@@ -1,0 +1,40 @@
+{
+  "name": "@operatiemobilisatie/design-system",
+  "version": "0.0.1",
+  "description": "A collection of React components for OM websites and applications.",
+  "scripts": {
+    "rollup": "npx rollup -c"
+  },
+  "author": "@douwepausma",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.48",
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-sass": "^1.12.21",
+    "sass": "^1.71.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "micromodal": "^0.4.10"
+  },
+  "peerDependencies": {
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.4.1"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ]
+}

@@ -1,0 +1,11 @@
+.modal {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -10;
+}
+
+.modal.is-open {
+    pointer-events: all;
+    opacity: 1;
+    z-index: 50;
+}
