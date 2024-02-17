@@ -4,6 +4,8 @@ A collection of [React](https://react.dev/) components for OM websites and appli
 ## Usage
 Make sure you've imported the OM Design System styles into your `layout.js` or `page.js`:
 ```js
+// app/layout.js
+
 import "@operatiemobilisatie/design-system/dist/css/style.css";
 ```
 
@@ -28,6 +30,8 @@ module.exports = {
 
 Only thing now is to simply import the component and use it!
 ```js
+// app/page.js
+
 import { Button } from '@operatiemobilisatie/design-system';
 
 export default function Page() {
