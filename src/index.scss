@@ -5,3 +5,30 @@
 /*
  * OM Global Styles
  */
+
+@layer utilities {
+    .shimmer {
+        @apply relative overflow-clip;
+
+        &:before {
+            background-color: #ffffff;
+            content: "";
+            height: 200%;
+            width: 30%;
+            left: -60%;
+            top: -50%;
+            opacity: .2;
+            position: absolute;
+            -webkit-transform: rotate(35deg);
+            transform: rotate(35deg);
+            -webkit-transition: all 1s cubic-bezier(.19, 1, .22, 1);
+            transition: all 1s cubic-bezier(.19, 1, .22, 1);
+        }
+
+        &:hover {
+            &:before {
+                left: 130%;
+            }
+        }
+    }
+}
