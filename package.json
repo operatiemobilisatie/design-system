@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "A collection of React components for OM websites and applications.",
   "scripts": {
-    "rollup": "npx rollup -c"
+    "rollup": "npx rollup -c",
+    "rollup-watch": "npx rollup -cw"
   },
   "author": "@douwepausma",
   "license": "MIT",
@@ -14,16 +15,18 @@
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.48",
     "next": "^14.1.0",
+    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "rollup-plugin-dts": "^6.1.0",
-    "rollup-plugin-sass": "^1.12.21",
-    "sass": "^1.71.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@tailwindcss/typography": "^0.5.10",
     "micromodal": "^0.4.10"
   },
   "peerDependencies": {
