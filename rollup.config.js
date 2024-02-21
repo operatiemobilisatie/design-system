@@ -2,13 +2,13 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
-import sass from 'rollup-plugin-sass';
+import postcss from 'rollup-plugin-postcss';
 
 import packageJson from "./package.json" assert { type: "json" };
 
 export default [
   {
-    input: "src/index.ts",
+    input: ["src/index.ts"],
     output: [
       {
         file: packageJson.main,
@@ -24,18 +24,25 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
-      sass({
-        include: ["/**/*.css", "/**/*.scss", "/**/*.sass"],
-        output: "dist/css/style.css",
-        failOnError: true,
-      }),
+      typescript({ tsconfig: "tsconfig.json" }),
+      postcss({
+        extract: 'css/style.css'
+      })
     ],
+  },
+  {
+    input: "src/tailwindcss/index.ts",
+    output: [{file: "dist/tailwindcss/index.js", format: "esm"}],
+    plugins: [
+      resolve(),
+      commonjs(),
+      typescript(),
+    ]
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
-    external: [/\.scss$/],
+    external: [/\.scss$/]
   },
 ];
