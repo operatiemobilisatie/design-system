@@ -1,0 +1,6 @@
+.om-logo {
+  @apply inline-block transition-all duration-150 relative;
+}
+a.om-logo, button.om-logo {
+  @apply shimmer;
+}
