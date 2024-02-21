@@ -9,7 +9,7 @@ Make sure you've imported the OM Design System styles into your `layout.js` or `
 import "@operatiemobilisatie/design-system/dist/css/style.css";
 ```
 
-Add the OM Design System preset to your `tailwind.config.js`:
+Add the OM Design System preset to your `tailwind.config.js` and include the library as content:
 ```js
 // tailwind.config.js
 
@@ -20,7 +20,9 @@ module.exports = {
   presets: [
     omTailwindPreset // OM Tailwind Preset here
   ],
-  content: [],
+  content: [
+    "./node_modules/@operatiemobilisatie/design-system/src/**/*.{js,jsx,ts,tsx}" // Define as content like so
+  ],
   theme: {
     extend: {},
   },
