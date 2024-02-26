@@ -1,1 +1,1 @@
-export { default } from "./Kicker.js";
+export { default } from "./Kicker.tsx";
