@@ -2,65 +2,19 @@ const plugin = require('tailwindcss/plugin');
 
 const omTailwindComponents = plugin(
   function ({ addComponents, theme }: {addComponents: Function, theme: Function}) {
-    
     const colors = theme('colors');
     let buttons = [];
-
-    /* Button base styles */
-    buttons.push({
-        ['.button']: {
-            display: 'inline-flex',
-            alignItems: 'center',
-            textAlign: 'center',
-            textTransform: 'uppercase',
-            borderRadius: '9999px',
-            fontWeight: '700',
-            transitionProperty: 'color, background-color, border-color',
-            transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-            transitionDuration: '150ms',
-            border: '1px solid',
-            cursor: 'pointer',
-
-            // Size attributes
-            fontSize: '1rem',
-            paddingTop: '0.375rem',
-            paddingRight: '1rem',
-            paddingBottom: '0.375rem',
-            paddingLeft: '1rem',
-
-            '&:hover': {
-                textDecoration: 'none',
-            }
-        },
-    });
-
+    let badges = [];
+    
     /* Button colors styles */
     buttons.push(Object.entries(colors).map(([key, value]: [key: any, value: any]) => {
-        if(key === 'primary') {
-            return {
-                [`.button--variant-full.button--color-${key}`]: {
-                    backgroundColor: value,
-                    '@apply shimmer': {}
-                },
-                [`.button--variant-outline.button--color-${key}`]: {
-                    backgroundColor: 'transparent',
-                    borderColor: value,
-                    color: value,
-    
-                    '&:hover': {
-                        backgroundColor: value,
-                        color: 'white'
-                    }
-                },
-            }
-        }
-
         return {
-            [`.button--variant-full.button--color-${key}`]: {
+            [`.button-full.button-${key}`]: {
                 backgroundColor: value[800],
+                color: 'white',
                 '@apply shimmer': {}
             },
-            [`.button--variant-outline.button--color-${key}`]: {
+            [`.button-outline.button-${key}`]: {
                 backgroundColor: 'transparent',
                 borderColor: value[800],
                 color: value[800],
@@ -70,11 +24,79 @@ const omTailwindComponents = plugin(
                     color: 'white'
                 }
             },
+            [`.button-icon.button-${key}`]: {
+                backgroundColor: 'transparent',
+                borderColor: 'transparent',
+                color: value[800],
+
+                '&:hover': {
+                    backgroundColor: value[200]
+                }
+            },
         }
     }));
+
+    buttons.push({
+        [`.button-full.button-secondary`]: {
+            backgroundColor: colors.gray[200],
+            color: colors.dark,
+            '@apply shimmer-invert': {}
+        },
+        [`.button-outline.button-secondary`]: {
+            backgroundColor: 'transparent',
+            borderColor: colors.gray[200],
+            color: colors.dark,
+
+            '&:hover': {
+                borderColor: colors.gray[200],
+                backgroundColor: colors.gray[200],
+            }
+        },
+        [`.button-icon.button-secondary`]: {
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            color: colors.dark,
+
+            '&:hover': {
+                backgroundColor: colors.gray[200],
+            }
+        },
+    })
+
+    addComponents(buttons);
+
+    /* Badge colors styles */
+    badges.push(Object.entries(colors).map(([key, value]: [key: any, value: any]) => {
+        return {
+            [`.badge.badge-${key}`]: {
+                backgroundColor: value[200],
+                color: value[800],
+            },
+            [`a.badge.badge-${key}:hover, button.badge.badge-${key}:hover`]: {
+                backgroundColor: value[300]
+            },
+        }
+    }));
+
+    badges.push({
+        // [`.badge.badge-primary`]: {
+        //     backgroundColor: colors.primary[800],
+        //     color: 'white',
+        // },
+        [`.badge.badge-secondary`]: {
+            backgroundColor: colors.gray[200],
+            color: colors.dark,
+        },
+        [`a.badge.badge-secondary:hover, button.badge.badge-secondary:hover`]: {
+            backgroundColor: colors.gray[300]
+        },
+    })
+
+    addComponents(badges);
+
  
     /* Button size styles */
-    buttons.push({})   
+    // buttons.push({})   
 
 //     /* Button icon styles */
 //     buttons.push({
@@ -82,8 +104,6 @@ const omTailwindComponents = plugin(
 //             padding: '8px',
 //         }
 //     });
-
-    addComponents(buttons);
 
 //     /* Badge base styles */
 //     badges.push({
