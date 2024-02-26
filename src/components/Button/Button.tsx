@@ -24,16 +24,16 @@ export interface Button {
   size: String,
   variant: String,
   attributes: Object,
-  as: ReactNode | String
+  as: any
   children: ReactNode
 }
 
 const Button = ({
   children,
-  className,
+  className = '',
   as = 'button',
   color = 'primary',
-  size = 'normal',
+  size = 'md',
   variant = 'full',
   attributes
 }: Button) => {
@@ -41,7 +41,7 @@ const Button = ({
 
   return (
     <ButtonElement
-      className={`button button--variant-${variant} button--size-${size} button--color-${color} ${className}`}
+      className={`button button-${variant} button-${size} button-${color} ${className}`}
       {...attributes}
     >
       {children}

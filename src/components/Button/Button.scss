@@ -1,87 +1,46 @@
-.button {
-  @apply flex items-center justify-center gap-2 rounded-full text-center font-bold border border-transparent uppercase px-4 py-1.5 duration-150 ease-in-out cursor-pointer;
+@layer components {
+  .button { 
+    @apply inline-flex tracking-wider items-center justify-center gap-2 rounded-full text-center font-bold border border-transparent uppercase px-4 py-1.5 duration-150 ease-in-out cursor-pointer;
 
-  &--size {
-    &-large {
-      @apply px-6 py-3;
-    }
-    &-small {
-      @apply px-3 py-0.5;
-    }
-  }
-  &--variant {
-    &-outline {
-      &.button--color {
-        &-primary {
-          @apply bg-transparent border-primary text-primary hover:bg-primary hover:text-white;
-          
-          &:hover {
-            @apply bg-primary text-white;
-          }
-        }
-        &-secondary {
-          @apply bg-transparent border-gray-800 text-dark;
-          
-          &:hover {
-            @apply bg-gray-800 text-white;
-          }
-        }
-        &-ghost {
-          @apply bg-transparent border-gray-400 text-dark;
-          
-          &:hover {
-            @apply bg-gray-400 text-dark;
-          }
-        }
-        &-white {
-          @apply bg-transparent border-white text-white;
-          
-          &:hover {
-            @apply bg-white text-black;
-          }
-        }
-      }
-    }
-    &-full {
-      &.button--color {
-        &-primary {
-          @apply bg-primary border-primary text-white;
-        }
-        &-white {
-          @apply bg-white border-white text-black;
-        }
-      }
-      // @apply shimmer;
-  
-      // &:hover {
-        // @apply bg-transparent text-inherit;
-      // }
-    }
-    &-inline {
-      @apply p-0;
-    }
-    &-icon {
-      @apply aspect-square flex items-center justify-center px-2.5 py-2.5;
+    // Sizes
+    &-md {
+      @apply px-4 py-1.5 text-sm;
 
       svg {
-        @apply aspect-square
+        @apply h-3 w-3;
       }
+      &.button-icon {
+        @apply px-2.5 py-2.5;
+      }
+    }
+    &-lg {
+      @apply px-5 py-2 text-base;
 
-      &.button--color {
-        &-primary {
-          @apply hover:bg-primary/10 hover:text-primary
-        }
-        &-secondary {
-          @apply hover:bg-gray-200 hover:text-dark
-        }
+      svg {
+        @apply h-[1.25rem] w-[1.25rem];
+      }
+      &.button-icon {
+        @apply px-2.5 py-2.5;
+      }
+    }
+    &-xl {
+      @apply px-6 py-2.5 text-lg;
+
+      svg {
+        @apply h-6 w-6;
+      }
+      &.button-icon {
+        @apply px-3 py-3;
+      }
+    }
+
+    // Icon
+    &-icon {
+      @apply aspect-square px-2.5 py-2.5;
+
+      svg {
+        @apply aspect-square 
       }
     }
   }
-}
-
-.btn {
-  @apply button button--variant-full no-underline w-max;
-}
-.btn-primary {
-  @apply bg-primary border-primary text-white;
 }
