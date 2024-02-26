@@ -1,0 +1,5 @@
+@layer components {
+  .badge {
+    @apply uppercase text-sm font-semibold px-2 py-px rounded-lg transition-colors duration-150 ease-in-out;
+  }
+}
