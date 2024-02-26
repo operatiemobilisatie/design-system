@@ -8,6 +8,7 @@ export default {
   ],
   safelist: [
     { pattern: /button-./ },
+    { pattern: /badge-./ },
   ],
   corePlugins: {
     color: false
@@ -19,7 +20,17 @@ export default {
         padding: '1rem'
       },
       colors: {
-        'primary': 'rgb(210, 38, 48)',
+        'primary': {
+          'DEFAULT': 'rgb(210, 38, 48)',
+          800: 'rgba(210, 38, 48)',
+          700: 'rgba(210, 38, 48, .95)',
+          600: 'rgba(210, 38, 48, .80)',
+          500: 'rgba(210, 38, 48, .65)',
+          400: 'rgba(210, 38, 48, .50)',
+          300: 'rgba(210, 38, 48, .30)',
+          200: 'rgba(210, 38, 48, .15)',
+          100: 'rgba(210, 38, 48, .05)'
+        },
         'gray': {
           800: 'rgb(112, 113, 115)',
           700: 'rgb(141, 141, 143)',
