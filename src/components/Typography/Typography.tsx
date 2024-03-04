@@ -25,6 +25,7 @@ export interface Typography {
     attributes: object,
     size: string,
     noMaxWidth: boolean
+    invert: boolean,
 }
 
 const Typography = ({
@@ -33,10 +34,11 @@ const Typography = ({
   as = 'div',
   attributes,
   size = 'base',
-  noMaxWidth = true,
+  noMaxWidth = false,
+  invert = false,
 }: Typography) => {
   const TypographyElement:Typography["as"] = as;
-  const sizeClases = {
+  const sizeClasses:object = {
     'sm': 'prose-sm',
     'base': 'prose-base',
     'lg': 'prose-base lg:prose-lg',
@@ -45,7 +47,7 @@ const Typography = ({
 
   return (
     <TypographyElement
-      className={`prose ${sizeClases[size]} ${noMaxWidth ? 'max-w-none' : ''} ${className}`}
+      className={`prose ${sizeClasses[size]} ${invert ? 'prose-invert' : ''} ${noMaxWidth ? 'max-w-none' : ''} ${className}`}
       {...attributes}
     >
       {children}
