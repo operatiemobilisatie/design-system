@@ -19,10 +19,10 @@ import './Button.scss';
 //  */
 
 export interface Button {
-  className: String,
-  color: String,
-  size: String,
-  variant: String,
+  className: string,
+  color: string,
+  size: 'sm' | 'md' | 'lg',
+  variant: 'full' | 'outline' | 'icon',
   attributes: Object,
   as: any
   children: ReactNode
