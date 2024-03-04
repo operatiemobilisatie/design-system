@@ -1,5 +1,16 @@
 @layer components {
   .card {
-    @apply relative border border-gray-100 shadow-sm rounded-2xl overflow-clip py-4 px-6 sm:py-7 sm:px-8;
+    @apply relative border border-gray-200 shadow-sm rounded-2xl overflow-clip py-4 px-6 sm:py-7 sm:px-8 duration-300 transition-colors;
+
+    .card-image > img {
+      @apply object-cover duration-300;
+    }
+  }
+  a.card:hover {
+    @apply hover:border-gray-300;
+
+    .card-image > img {
+      @apply scale-105;
+    }
   }
 }
