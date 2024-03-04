@@ -5,6 +5,11 @@
 /*
  * OM Global Styles
  */
+@layer base {
+    body {
+        @apply selection:bg-primary-400;
+    }
+}
 
 @layer utilities {
     .shimmer, .shimmer-invert {
@@ -35,10 +40,36 @@
         background-color: #000;
         opacity: .05;
     }
+    
+    .link {
+      @apply duration-150 border-b border-transparent hover:border-primary;
+    }
 }
 
 @layer components {
     hr {
         @apply my-6
+    }
+    .field {
+        @apply w-full bg-white px-5 py-2 rounded-2xl border border-gray-300 hover:border-gray-400 outline-none focus:border-primary focus:ring-2 ring-primary-400 duration-150;
+        
+        &-sm {
+            @apply px-4 py-1.5 rounded-xl text-sm;
+
+            select {
+                height: 34px;
+            }
+        }
+        &-lg {
+            @apply px-6 py-2.5 text-lg;
+
+            select {
+                height: 50px;
+            }
+        }
+    }
+    select.field {
+        @apply cursor-pointer;
+        height: 42px;
     }
 }

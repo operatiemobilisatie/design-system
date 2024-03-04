@@ -1,9 +1,16 @@
 @layer components {
   .button { 
-    @apply inline-flex tracking-wider items-center justify-center gap-2 rounded-full text-center font-bold border border-transparent uppercase px-4 py-1.5 duration-150 ease-in-out cursor-pointer;
+    @apply inline-flex min-w-min tracking-wider items-center justify-center gap-2 rounded-full text-center font-bold border border-transparent uppercase px-5 py-2 text-base duration-150 ease-in-out cursor-pointer;
+
+    svg {
+      @apply h-[1.25rem] w-[1.25rem];
+    }
+    &.button-icon {
+      @apply px-2.5 py-2.5;
+    }
 
     // Sizes
-    &-md {
+    &-sm {
       @apply px-4 py-1.5 text-sm;
 
       svg {
@@ -13,17 +20,17 @@
         @apply px-2.5 py-2.5;
       }
     }
-    &-lg {
-      @apply px-5 py-2 text-base;
+    // &-md {
+    //   @apply px-5 py-2 text-base;
 
-      svg {
-        @apply h-[1.25rem] w-[1.25rem];
-      }
-      &.button-icon {
-        @apply px-2.5 py-2.5;
-      }
-    }
-    &-xl {
+    //   svg {
+    //     @apply h-[1.25rem] w-[1.25rem];
+    //   }
+    //   &.button-icon {
+    //     @apply px-2.5 py-2.5;
+    //   }
+    // }
+    &-lg {
       @apply px-6 py-2.5 text-lg;
 
       svg {
