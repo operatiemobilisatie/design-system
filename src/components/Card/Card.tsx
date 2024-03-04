@@ -35,10 +35,11 @@ const Card = ({
 
   return (
     <CardElement
-      className={`card ${className}`}
+      className={`card group ${className}`}
       {...attributes}
     >
       {children}
+      <div className="card-indicator"></div>
     </CardElement>
   )
 };
