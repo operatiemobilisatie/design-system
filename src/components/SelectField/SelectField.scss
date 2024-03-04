@@ -1,0 +1,52 @@
+.om-select__control {
+    @apply field;
+
+    &--menu-is-open {
+        @apply border-primary hover:border-primary ring-2;
+    }
+}
+.om-select__value-container {
+    @apply flex flex-wrap gap-1;
+}
+.om-select__indicator-separator {
+    @apply bg-gray-300 mx-1;
+}
+.om-select__indicators {
+    @apply -mr-2;
+}
+.om-select__menu {
+    @apply bg-white rounded-2xl my-2 border border-gray-300 overflow-clip max-h-72 overflow-y-auto;
+}
+.om-select__menu-list {
+
+}
+.om-select__option {
+    @apply py-2 px-5 hover:bg-gray-100;
+}
+.om-select__multi-value {
+    @apply badge bg-gray-200 overflow-clip;
+
+    // &:first-child {
+    //     @apply -ml-0.5
+    // }
+
+    .om-select__multi-value__remove {
+        @apply -mr-2 ml-px pl-px pr-0.5;
+
+        &:hover {
+            @apply bg-gray-300;
+        }
+    }
+}
+
+.om-select-sm {
+    .om-select__control {
+        @apply field-sm;
+    }   
+}
+
+.om-select-lg {
+    .om-select__control {
+        @apply field-lg;
+    }   
+}
