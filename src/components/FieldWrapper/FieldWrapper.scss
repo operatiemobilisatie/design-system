@@ -1,0 +1,20 @@
+@layer components {
+    .field-wrapper {
+        @apply relative;
+
+        label {
+            @apply block font-bold text-sm;
+        }
+
+        &-sm {
+            label {
+                @apply text-sm;
+            }
+        }
+        &-lg {
+            label {
+                @apply text-base;
+            }
+        }
+    }
+}
