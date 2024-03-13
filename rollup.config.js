@@ -23,13 +23,13 @@ export default [
       },
     ],
     plugins: [
+      postcss({
+        extract: 'css/style.css'
+      }),
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "tsconfig.json" }),
-      postcss({
-        extract: 'css/style.css'
-      })
+      typescript({ tsconfig: "tsconfig.json" })
     ],
   },
   {
