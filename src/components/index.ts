@@ -8,3 +8,4 @@ export { default as Kicker } from "./Kicker";
 export { default as SelectField } from "./SelectField";
 export { default as Typography } from "./Typography";
 export { default as Logo } from "./Logo";
+export { default as Loading } from "./Loading";
