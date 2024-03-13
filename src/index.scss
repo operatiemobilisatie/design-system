@@ -56,14 +56,14 @@
         &-sm {
             @apply px-4 py-1.5 rounded-xl text-sm;
 
-            select {
+            select, &[type=date] {
                 height: 34px;
             }
         }
         &-lg {
             @apply px-6 py-2.5 text-lg;
 
-            select {
+            select, &[type=date] {
                 height: 50px;
             }
         }
