@@ -26,6 +26,7 @@ export interface Typography {
     size: string,
     noMaxWidth: boolean
     invert: boolean,
+    innerHtml: string
 }
 
 const Typography = ({
@@ -36,6 +37,7 @@ const Typography = ({
   size = 'base',
   noMaxWidth = false,
   invert = false,
+  innerHtml,
 }: Typography) => {
   const TypographyElement:Typography["as"] = as;
   const sizeClasses:object = {
@@ -48,6 +50,7 @@ const Typography = ({
   return (
     <TypographyElement
       className={`prose ${sizeClasses[size]} ${invert ? 'prose-invert' : ''} ${noMaxWidth ? 'max-w-none' : ''} ${className}`}
+      dangerouslySetInnerHTML={{__html: innerHtml}}
       {...attributes}
     >
       {children}
