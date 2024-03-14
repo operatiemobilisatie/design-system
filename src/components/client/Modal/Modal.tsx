@@ -1,22 +1,29 @@
-'use client'
-
-import { useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MicroModal from 'micromodal';
-import { Button } from 'components';
+import { Button } from '../../server';
+// import { Button } from 'components';
 
-/**
- * 
- * @typedef {Props} props
- * @prop {string} className
- * @prop {React.ReactNode} children
- * @prop {React.ReactNode} title
- * @prop {React.ReactNode} description
- * @returns 
- */
+// /**
+//  * 
+//  * @typedef {Props} props
+//  * @prop {string} className
+//  * @prop {React.ReactNode} children
+//  * @prop {React.ReactNode} title
+//  * @prop {React.ReactNode} description
+//  * @returns 
+//  */
 
-const Modal = ({id = 'modal', title, settings, description, className, children}) => {
+
+export interface Modal {
+    className: string,
+    children: ReactNode,
+    attributes: object,
+    id: string
+}
+
+const Modal = ({id = 'modal', settings, className, children}:Modal) => {
 
     useEffect(() => {
         MicroModal.init(settings);
@@ -29,16 +36,6 @@ const Modal = ({id = 'modal', title, settings, description, className, children}
                     <Button color="primary" variant="icon" className='float-right p-1 text-lg' ariaLabel="Close modal" attributes={{'data-micromodal-close': true}}>
                         <FontAwesomeIcon icon={faClose}></FontAwesomeIcon>
                     </Button>
-                    <header className='mb-4'>
-                        {title}
-                        {description}
-                        {/* {title && <h2 className='text-3xl font-bold mb-2' id={`${id}-title`}>
-                            {title}
-                        </h2>}
-                        {description && <p className='text-xl text-secondary'>
-                            {description}
-                        </p>} */}
-                    </header>
                     <div id={`${id}-content`}>
                         {children}
                     </div>

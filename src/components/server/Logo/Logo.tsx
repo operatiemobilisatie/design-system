@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+import type { ReactNode } from "react";
+import React from "react";
 import './Logo.scss';
 
 export interface Logo {
@@ -10,7 +11,7 @@ export interface Logo {
   as: any,
 }
 
-const Logo = ({
+const Logo = async ({
   className = '',
   attributes,
   width = '100px',
