@@ -6,14 +6,14 @@ Make sure you've imported the OM Design System styles into your `layout.js` or `
 ```js
 // app/layout.js
 
-import "@operatiemobilisatie/design-system/dist/cjs/css/style.css";
+import "@operatiemobilisatie/design-system/css";
 ```
 
 Add the OM Design System preset to your `tailwind.config.js` and include the library as content:
 ```js
 // tailwind.config.js
 
-import { omTailwindComponents, omTailwindPresets } from "@operatiemobilisatie/design-system/dist/tailwindcss";
+import { omTailwindComponents, omTailwindPresets } from "@operatiemobilisatie/design-system/tailwindcss";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -36,11 +36,14 @@ Only thing now is to simply import the component and use it!
 ```js
 // app/page.js
 
-import { Button } from '@operatiemobilisatie/design-system';
+import { Button } from '@operatiemobilisatie/design-system/server';
+import { Modal } from '@operatiemobilisatie/design-system/client';
 
 export default function Page() {
   return (
-    <Button variant="full" color="primary" size="small">God is love!</Button>
+    <Modal>
+      <Button variant="full" color="primary" size="small">God is love!</Button>
+    </Modal>
   );
 }
 
