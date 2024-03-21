@@ -1,0 +1,17 @@
+// Default
+.checkbox {
+    @apply opacity-0 absolute;
+}
+.checkbox-indicator {
+    @apply w-6 h-6 aspect-square border-4 border-gray-200 rounded-md relative flex items-center justify-center duration-300 text-base text-white bg-white;
+}
+
+// Checked
+input[type="checkbox"]:checked:hover ~ .checkbox-indicator, input[type="checkbox"]:checked ~ .checkbox-indicator {
+    @apply bg-primary text-white border-primary;
+}
+
+// Hover
+input[type="checkbox"]:hover ~ .checkbox-indicator {
+    @apply border-gray-300;
+}
