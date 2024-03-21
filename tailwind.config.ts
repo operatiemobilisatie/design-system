@@ -8,6 +8,7 @@ export default {
   ],
   safelist: [
     { pattern: /button-./ },
+    { pattern: /field-./ },
     { pattern: /badge-./ }
   ],
   corePlugins: {
