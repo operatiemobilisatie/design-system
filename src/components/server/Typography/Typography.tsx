@@ -50,7 +50,7 @@ const Typography = ({
   return (
     <TypographyElement
       className={`prose ${sizeClasses[size]} ${invert ? 'prose-invert' : ''} ${noMaxWidth ? 'max-w-none' : ''} ${className}`}
-      dangerouslySetInnerHTML={{__html: innerHtml}}
+      dangerouslySetInnerHTML={innerHtml && {__html: innerHtml}}
       {...attributes}
     >
       {children}
