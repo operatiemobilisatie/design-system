@@ -1,0 +1,30 @@
+// Default
+.radio {
+    @apply opacity-0 absolute;
+}
+.radio-indicator {
+    @apply w-6 h-6 aspect-square bg-gray-200 rounded-full relative flex items-center justify-center duration-300;
+
+    &:before {
+        @apply inline-block absolute w-3 h-3 aspect-square rounded-full bg-white;
+        content: ' ';
+    }
+    &:after {
+        @apply inline-block absolute w-3 h-3 aspect-square rounded-full bg-white scale-0 duration-300;
+        content: ' ';
+    }
+}
+
+// Checked
+input[type="radio"]:checked:hover ~ .radio-indicator, input[type="radio"]:checked ~ .radio-indicator {
+    @apply bg-primary/20;
+
+    &:after {
+        @apply bg-primary scale-100;
+    }
+}
+
+// Hover
+input[type="radio"]:hover ~ .radio-indicator {
+    @apply bg-gray-300;
+}
