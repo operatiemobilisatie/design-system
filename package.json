@@ -1,6 +1,6 @@
 {
   "name": "@operatiemobilisatie/design-system",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A collection of React components for OM websites and applications.",
   "scripts": {
     "rollup": "npx rollup -c",
@@ -42,5 +42,8 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/operatiemobilisatie"
+  }
 }
