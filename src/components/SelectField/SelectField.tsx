@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useId, ReactNode } from "react";
 import Select from 'react-select';
 import './SelectField.scss'
